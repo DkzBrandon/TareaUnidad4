@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea HTML - Unidad IV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="fuentes" href="fuentes.html">
+</head>
+<body>
+    <div class="background">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+    </div>
+    <header class="header">
+        <h1>Tarea HTML - Unidad IV</h1>
+    </header>
+    <main class="container">
+        <!-- Sección Acerca de mí -->
+        <section class="about-me">
+            <h2>Acerca de mí</h2>
+            <div class="info">
+                <p><strong>Nombre:</strong> Brandon Arturo Badillo Jiménez</p>
+                <p><strong>No. de control:</strong> 21490525</p>
+                <p><strong>Correo:</strong> <a href="mailto:a21490525@itmexicali.edu.mx">a21490525@itmexicali.edu.mx</a></p>
+                <div class="buttons">
+                    <a href="cv.html" class="button">Ver mi CV</a>
+                    <a href="fuentes.html" class="button">Fuentes Consultadas</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Acerca de la Materia -->
+        <section class="about-subject">
+            <h2>Acerca de la Materia</h2>
+            <div class="info">
+                <p><strong>Profesor:</strong> Edder Iván Pimentel Félix</p>
+                <p><strong>Materia:</strong> Programación Web</p>
+                <p><strong>Unidad IV:</strong> Programación del lado del servidor</p>
+                <p><strong>Tarea:</strong> Conceptos y ejemplos básicos en HTML</p>
+            </div>
+        </section>
+
+        <!-- Concepto 1 -->
+        <div class="concept-card">
+            <input type="checkbox" id="concept1">
+            <label for="concept1" class="concept-title">Mecanismos de seguridad en formularios</label>
+            <div class="content">
+                <p><strong>¿Qué es?</strong> Técnicas utilizadas para proteger los formularios de ataques como inyecciones SQL o XSS.</p>
+                <p><strong>¿Para qué se usa?</strong> Garantizar que los datos enviados sean válidos y seguros.</p>
+                <p><strong>¿Cuándo se usa?</strong> En formularios donde se recolecten datos de los usuarios, como inicios de sesión o registros.</p>
+                <pre>
+<code>&lt;form&gt;
+  &lt;label for="email"&gt;Correo electrónico:&lt;/label&gt;
+  &lt;input type="email" id="email" required&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</code>
+                </pre>
+                <p><strong>Resultado esperado:</strong> Si el usuario escribe un correo válido como "correo@dominio.com", el formulario se enviará correctamente. Si no, mostrará un mensaje de error.</p>
+            </div>
+        </div>
+
+        <!-- Concepto 2 -->
+        <div class="concept-card">
+            <input type="checkbox" id="concept2">
+            <label for="concept2" class="concept-title">Introducción a AJAX</label>
+            <div class="content">
+                <p><strong>¿Qué es?</strong> Técnica para enviar y recibir datos sin recargar la página completa.</p>
+                <p><strong>¿Para qué se usa?</strong> Hacer aplicaciones web más rápidas y dinámicas.</p>
+                <p><strong>¿Cuándo se usa?</strong> En búsquedas en vivo, autocompletados y formularios avanzados.</p>
+                <pre>
+<code>let xhr = new XMLHttpRequest();
+xhr.open("GET", "datos.json", true);
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        console.log(xhr.responseText);
+    }
+};
+xhr.send();
+</code>
+                </pre>
+                <p><strong>Resultado esperado:</strong> Los datos del archivo "datos.json" se mostrarán en la consola del navegador.</p>
+            </div>
+        </div>
+
+        <!-- Concepto 3 -->
+        <div class="concept-card">
+            <input type="checkbox" id="concept3">
+            <label for="concept3" class="concept-title">JQuery</label>
+            <div class="content">
+                <p><strong>¿Qué es?</strong> Una librería de JavaScript que simplifica tareas comunes como manipulación de elementos y animaciones.</p>
+                <p><strong>¿Para qué se usa?</strong> Reducir el tiempo necesario para escribir código repetitivo.</p>
+                <p><strong>¿Cuándo se usa?</strong> Para manejar eventos, manipular el DOM o agregar efectos visuales fácilmente.</p>
+                <pre>
+<code>$("#boton").click(function() {
+    $("#texto").text("¡Texto cambiado!");
+});
+</code>
+                </pre>
+                <p><strong>Resultado esperado:</strong> Al hacer clic en el botón, el texto del elemento cambiará a "¡Texto cambiado!".</p>
+            </div>
+        </div>
+
+        <!-- Concepto 4 -->
+        <div class="concept-card">
+            <input type="checkbox" id="concept4">
+            <label for="concept4" class="concept-title">Mootools</label>
+            <div class="content">
+                <p><strong>¿Qué es?</strong> Un framework de JavaScript que facilita la creación de interfaces avanzadas y efectos visuales.</p>
+                <p><strong>¿Para qué se usa?</strong> Agregar animaciones, manipular elementos del DOM y mejorar la experiencia del usuario.</p>
+                <p><strong>¿Cuándo se usa?</strong> En proyectos donde se requiere funcionalidad avanzada en interfaces.</p>
+                <pre>
+<code>$("miElemento").setStyle("color", "red").fade("in");
+</code>
+                </pre>
+                <p><strong>Resultado esperado:</strong> El elemento cambia su color a rojo y aparece suavemente en la pantalla.</p>
+            </div>
+        </div>
+
+        <!-- Concepto 5 -->
+        <div class="concept-card">
+            <input type="checkbox" id="concept5">
+            <label for="concept5" class="concept-title">Prototype</label>
+            <div class="content">
+                <p><strong>¿Qué es?</strong> Una librería de JavaScript que facilita tareas como peticiones AJAX y manipulación del DOM.</p>
+                <p><strong>¿Para qué se usa?</strong> Simplificar la manipulación de elementos y mejorar la productividad en proyectos complejos.</p>
+                <p><strong>¿Cuándo se usa?</strong> En aplicaciones que necesitan trabajar con datos dinámicos de manera eficiente.</p>
+                <pre>
+<code>$("miDiv").update("Nuevo contenido");
+</code>
+                </pre>
+                <p><strong>Resultado esperado:</strong> El contenido del elemento con ID "miDiv" se reemplaza con "Nuevo contenido".</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Tarea creada por Brandon Arturo Badillo Jiménez</p>
+    </footer>
+</body>
+</html>

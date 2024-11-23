@@ -1,0 +1,218 @@
+/* Fondo Animado */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: linear-gradient(120deg, #020024, #090979, #00d4ff);
+    overflow-x: hidden;
+}
+
+.background .stars {
+    background: url('https://i.imgur.com/Z8n6ZB6.png') repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.background .nebula {
+    background: url('https://i.imgur.com/WqjvcXJ.png') no-repeat center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.6;
+    animation: drift 15s infinite linear;
+}
+
+@keyframes drift {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Encabezado */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0px 0px 20px #00d4ff;
+}
+
+/* Contenedor */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Estilo para "Acerca de mí" */
+.about-me {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.about-me .info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.about-me .info a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+.about-me .info a:hover {
+    text-decoration: underline;
+}
+
+.about-me .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.about-me .button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000; /* Texto negro para mayor contraste */
+    background: #fff; /* Fondo blanco para contraste */
+    border: 2px solid #00d4ff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.about-me .button:hover {
+    background: #00d4ff;
+    color: #fff; /* Texto blanco al hacer hover */
+}
+
+/* Estilo para "Acerca de la Materia" */
+.about-subject {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-subject h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.about-subject .info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Tarjetas con menú desplegable */
+.concept-card {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-bottom: 20px; /* Separación entre tarjetas */
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.concept-card input[type="checkbox"] {
+    display: none;
+}
+
+.concept-card .concept-title {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #00d4ff;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.concept-card .concept-title:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-3px);
+}
+
+.concept-card .content {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.concept-card input[type="checkbox"]:checked + .concept-title + .content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+pre {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    color: #00ff7f;
+    font-size: 0.95rem;
+}
+/* Botones comunes */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #00d4ff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #008ec3;
+}
+
+/* Estilo de pie de página */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid #00d4ff;
+}
