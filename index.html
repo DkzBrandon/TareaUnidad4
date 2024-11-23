@@ -51,14 +51,15 @@
                 <p><strong>¿Para qué se usa?</strong> Garantizar que los datos enviados sean válidos y seguros.</p>
                 <p><strong>¿Cuándo se usa?</strong> En formularios donde se recolecten datos de los usuarios, como inicios de sesión o registros.</p>
                 <pre>
-<code>&lt;form&gt;
-  &lt;label for="email"&gt;Correo electrónico:&lt;/label&gt;
-  &lt;input type="email" id="email" required&gt;
-  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
-&lt;/form&gt;
-</code>
+                    <code>
+                        &lt;form method=&quot;POST&quot; action=&quot;/submit&quot;&gt;
+                            &lt;input type=&quot;text&quot; name=&quot;username&quot; required&gt;
+                            &lt;input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;random_generated_token&quot;&gt;
+                            &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+                        &lt;/form&gt;
+                        </code>
                 </pre>
-                <p><strong>Resultado esperado:</strong> Si el usuario escribe un correo válido como "correo@dominio.com", el formulario se enviará correctamente. Si no, mostrará un mensaje de error.</p>
+                <p><strong>Resultado esperado:</strong> Se realiza una solicitud HTTP GET a https://api.example.com/data. Si la respuesta tiene un código de estado 200, el contenido de la respuesta se muestra en la consola del navegador.</p>
             </div>
         </div>
 
@@ -71,17 +72,20 @@
                 <p><strong>¿Para qué se usa?</strong> Hacer aplicaciones web más rápidas y dinámicas.</p>
                 <p><strong>¿Cuándo se usa?</strong> En búsquedas en vivo, autocompletados y formularios avanzados.</p>
                 <pre>
-<code>let xhr = new XMLHttpRequest();
-xhr.open("GET", "datos.json", true);
-xhr.onload = function() {
+<code>
+    let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data", true);
+xhr.onload = function () {
     if (xhr.status === 200) {
         console.log(xhr.responseText);
     }
 };
 xhr.send();
+
 </code>
                 </pre>
-                <p><strong>Resultado esperado:</strong> Los datos del archivo "datos.json" se mostrarán en la consola del navegador.</p>
+                <p><strong>Resultado esperado:</strong> Al hacer clic en el botón con ID #button, el texto dentro del elemento con ID #text se cambiará a "Texto cambiado".
+                </p>
             </div>
         </div>
 
@@ -94,9 +98,12 @@ xhr.send();
                 <p><strong>¿Para qué se usa?</strong> Reducir el tiempo necesario para escribir código repetitivo.</p>
                 <p><strong>¿Cuándo se usa?</strong> Para manejar eventos, manipular el DOM o agregar efectos visuales fácilmente.</p>
                 <pre>
-<code>$("#boton").click(function() {
-    $("#texto").text("¡Texto cambiado!");
+<code>$(document).ready(function () {
+    $("#button").click(function () {
+        $("#text").text("Texto cambiado");
+    });
 });
+
 </code>
                 </pre>
                 <p><strong>Resultado esperado:</strong> Al hacer clic en el botón, el texto del elemento cambiará a "¡Texto cambiado!".</p>
@@ -112,10 +119,12 @@ xhr.send();
                 <p><strong>¿Para qué se usa?</strong> Agregar animaciones, manipular elementos del DOM y mejorar la experiencia del usuario.</p>
                 <p><strong>¿Cuándo se usa?</strong> En proyectos donde se requiere funcionalidad avanzada en interfaces.</p>
                 <pre>
-<code>$("miElemento").setStyle("color", "red").fade("in");
+<code>
+    document.id("myElement").setStyle("color", "blue").fade("in");
 </code>
                 </pre>
-                <p><strong>Resultado esperado:</strong> El elemento cambia su color a rojo y aparece suavemente en la pantalla.</p>
+                <p><strong>Resultado esperado:</strong> El color del texto del elemento con ID myElement cambia a azul, y el elemento aparece con un efecto de desvanecimiento en la página.
+                </p>
             </div>
         </div>
 
